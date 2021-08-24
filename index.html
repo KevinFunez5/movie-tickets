@@ -11,24 +11,32 @@
   <form id="ticketOrder">
     <div>
       <select class="form-control" name="movie" id="movie">Movie
-        <option value="knight">The Green Knight</option>
-        <option value="kumar">Harold & Kumar</option>
+        <option value="The Green Knight">The Green Knight</option>
+        <option value="Harold & Kumar Go to White Castle">Harold & Kumar</option>
       </select>
     </div>
     <div>
       <select class="form-control" name="time" id="time">Movie Time
-        <option value="eve">7pm</option>
-        <option value="matinee">4:30pm</option>
+        <option value="Evening">7pm</option>
+        <option value="Matinee">4:30pm</option>
       </select>
     </div>
     <div>
       <select class="form-control" name="elderliness" id="elderliness">Ticket Type
-        <option value="ga">General Admission</option>
-        <option value="student">Student</option>
-        <option value="senior">Senior</option>
+        <option value="General Admission">General Admission</option>
+        <option value="Student">Student</option>
+        <option value="Senior">Senior</option>
       </select>
     </div>
     <button id="submit" type="submit">Buy your Ticket!</button>
   </form>
+  <div id="yerTix" class="card">
+    <ul>
+      <li><span class="movie"></span></li>
+      <li><span class="time"></span></li>
+      <li><span class="elderliness"></span></li>
+    </ul>
+    <div id="yerPrice"></div>
+  </div>
 </body>
 </html>

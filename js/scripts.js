@@ -1,3 +1,4 @@
+//bi
 
 function YourTicket(MovieName, MovieTime, TicketType) {
   this.movie = MovieName;
@@ -6,19 +7,19 @@ function YourTicket(MovieName, MovieTime, TicketType) {
 }
 
 const movies = [
-  {title: "kumar", price: 10.00},
-  {title: "knight", price: 15.00}
+  {title: "Harold & Kumar Go to White Castle", price: 10.00},
+  {title: "The Green Knight", price: 15.00}
 ]
 
 const times = [
-  {time: "eve", price: 3},
-  {time: "matinee", price: -5}
+  {time: "Evening", price: 3},
+  {time: "Matinee", price: -5}
 ]
 
 const types = [
-  {type: "ga", price: 0},
-  {type: "student", price: -2},
-  {type: "senior", price: -4}
+  {type: "General Admission", price: 0},
+  {type: "Student", price: -2},
+  {type: "Senior", price: -4}
 ]
 
 YourTicket.prototype.getCost = function () {
@@ -44,5 +45,25 @@ YourTicket.prototype.getCost = function () {
     return cost;
 }
 
-let test = new YourTicket("kumar", "matinee", "senior");
-test.getCost();
+// ui
+
+// function showTicket()
+
+$(document).ready(function() {
+  $("form#ticketOrder").submit(function(event){
+    event.preventDefault();
+    const inputMovie = $("select#movie").val();
+    const inputTime = $("select#time").val();
+    const inputType = $("select#elderliness").val();
+    const inputTicket = new YourTicket(inputMovie, inputTime, inputType);
+    let costOfTix = inputTicket.getCost();
+    $(".movie").html(inputTicket.movie);
+    $(".time").html(inputTicket.time);
+    $(".elderliness").html(inputTicket.type);
+    $("#yerPrice").html(costOfTix);
+  });
+});
+
+
+
+
